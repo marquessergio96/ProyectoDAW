@@ -1,0 +1,57 @@
+body{
+    background-image: url("../media/fondo.jpg");
+}
+#tituloInicio1{
+    background-color: rgba(0,0,0,.5);
+    font-size: 80px;
+    color:white;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;top:100px;
+    width:auto;
+}
+#tituloInicio2{
+    background-color: rgba(0,0,0,.5);
+    color:white;
+    font-size: 30px;
+    position: absolute;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    left: 0;
+    right: 0;
+    top:250px;
+    width:auto;
+}
+.botonesInicio{
+    height: 100%;
+    font-size: 25px;
+    margin-right: 20px;
+}
+.botonesInicio:hover{
+    background-color: #1F1F1F;
+    border-top: 4px solid red;
+}
+.botonesInicio>a{
+    margin-top: 10px;
+}
+#tituloNav{
+    margin-top: 10px;
+    font-size: 25px;
+}
+.imagenesMuestra{
+    width:350px;
+    height:250px;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5px;
+
+}
+.pieDeImagen{
+    margin-top:30px;
+    font-size: 20px;
+    margin-left:20px;
+    color:black;
+    font-weight: bold;
+}
