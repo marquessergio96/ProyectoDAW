@@ -55,3 +55,13 @@ body{
     color:black;
     font-weight: bold;
 }
+.contactos{
+    margin-top:50px;
+}
+#calle{
+    color: darkslategrey;
+    margin-left: 40px;
+}
+.titulosContactos {
+    font-weight: bold;
+}
