@@ -162,13 +162,13 @@
     body {
         margin: 0px;
         padding: 0px;
+        background-image: url("../Webroot/media/fondopanel.jpg");
     }
 </style>
 <body>
 <h1>PANEL</h1>
 <div class="nav-side-menu">
     <div class="brand">Panel de administración</div>
-    <form action="../Controller/cpanel.php" method="post" name="formulario" class="form-horizontal" style="margin-left: 10%;">
 
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
     <div class="menu-list">
@@ -190,26 +190,22 @@
             </li>
             <li>
                 
-                <a href="">
+                <a href="../Controller/cpanel.php?accion=cerrar">
                     <i class="glyphicon glyphicon-log-out"></i> Cerrar sesión
                 </a>
             </li>
+
         </ul>
-        </form>
     </div>
 </div>
 <div class="container" id="main">
     <div class="row">
         <div class="col-md-12">
-            <h4>PROYECTO HOSTELERIA</h4>
+            <h1 style="color:white; -webkit-text-fill-color: yellowgreen;
+-webkit-text-stroke: 1px black;">PROYECTO HOSTELERIA</h1>
         </div>
     </div>
 </div>
 </body>
 </html>
-<script>
-    function enviar() {
-        document.formulario.submit()
-    }
 
-</script>

@@ -31,7 +31,7 @@ class UsuarioPDO implements UsuarioDB
      */
     public static function validarUsuario($codUsuario, $password)
     {
-        $sql = "Select * from Usuarios WHERE codUsuario='" . $codUsuario . "' and password= SHA2('" . $password . "',256)";
+        $sql = "Select * from Usuario WHERE nombre='" . $codUsuario . "' and password= SHA2('" . $password . "',256)";
         $arrayUsuario = [];
         $resultadoConsulta = DBPDO::ejecutaConsulta($sql, [$codUsuario, $password]);
         if ($resultadoConsulta->rowCount() == 1) {
@@ -57,7 +57,7 @@ class UsuarioPDO implements UsuarioDB
     public static function registrarUsuario($codUsuario, $descripcion, $password)
     {
         $registroOK = false;
-        $sql = "Insert into Usuarios values (?,?,?,'usuario',NULL,0) ";
+        $sql = "Insert into Usuario values (?,?,?,'usuario',NULL,0) ";
         $resultado = DBPDO::ejecutaConsulta($sql, [$codUsuario, $descripcion, $password]);
         if ($resultado->rowCount() == 1) {
             $registroOK = true;
@@ -79,7 +79,7 @@ class UsuarioPDO implements UsuarioDB
     public static function editarUsuario($password)
     {
         $modificacionOK = false;
-        $sql = "Update Usuarios password=? where codUsuario=?";
+        $sql = "Update Usuario password=? where nombre=?";
         $resultado = DBPDO::ejecutaConsulta($sql, [$password]);
         if ($resultado->rowCount() == 1) {
             $modificacionOK = 'Modificacion OK';

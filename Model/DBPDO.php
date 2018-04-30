@@ -1,4 +1,5 @@
 <?php
+//require_once '../Config/DBconfig.php';
 /**
  * File DBPDO.php
  *

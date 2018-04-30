@@ -14,8 +14,8 @@
     <a class="btn btn-danger" href="index.php?pagin=inicio" style="float:right;margin-top:10px;margin-right:10px;">VOLVER</a>
 </nav>
 <div style="background-color: midnightblue;width:300px;height:200px;margin:0 auto;padding: 20px;">
-<form action="../Controller/clogin.php" method="post" class="form-horizontal" style="margin-left: 10%;">
-<!--    --><?php //echo "<span style='color:red;'>",$error,"</span>"; ?>
+<form action="index.php?pagina=login" method="post" class="form-horizontal" style="margin-left: 10%;">
+    <?php echo "<span style='color:red;'>",$error,"</span>"; ?>
     <div class="form-group input-group" style="margin-top: 20px;">
 
                     <span class="input-group-addon">

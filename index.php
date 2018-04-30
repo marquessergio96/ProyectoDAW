@@ -1,9 +1,9 @@
 <?php
-//require_once 'Modelo/Usuario.php';
+require_once 'Model/Usuario.php';
 //require_once 'Modelo/WSSOAP.php';
 //require_once 'Modelo/REST.php';
 //require_once 'Modelo/Departamento.php';
-//require_once 'Configuracion/DBconfig.php';
+require_once 'Config/DBconfig.php';
 //require_once 'Core/LibreriaValidacion.php';
 require_once 'Config/config.php';
 $controlador=$controladores['inicio'];
