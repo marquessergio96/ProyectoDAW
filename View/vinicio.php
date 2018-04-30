@@ -1,6 +1,6 @@
 
 <nav style="width:100%; height:40px;background-color: black;">
-    <a href="#" style="color:white;float:right;margin-right: 10px;margin-top:10px;"><span  class="glyphicon glyphicon-log-in"></span> Iniciar sesión</a>
+    <a href="index.php?pagina=login" style="color:white;float:right;margin-right: 10px;margin-top:10px;"><span  class="glyphicon glyphicon-log-in"></span> Área administración</a>
 </nav>
 <div style="text-align: center">
 <img src="../Webroot/media/fondo-restaurante.jpg" style="width: 100%;height:80%;display: block;
