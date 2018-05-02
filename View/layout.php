@@ -1,6 +1,6 @@
 <?php
 if (isset($_SESSION['usuario'])) {
-    $vista = 'Vista/vinicio.php';
+    $vista = 'View/vinicio.php';
 } else {
     $vista = 'View/vinicio.php';
 }
