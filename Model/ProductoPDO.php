@@ -1,21 +1,8 @@
 <?php
-/**
- * File UsuarioPDO.php
- *
- * Consultas a la base de datos
- *
- * @package modelo
- */
+
 require_once 'DBPDO.php';
 
-/**
- * Class UsuarioPDO
- *
- * Clase que realiza un CRUD sobre Usuarios.
- *
- * @author Sergio Marqués
- * @version 1.0
- */
+
 class ProductoPDO {
 
 
@@ -28,17 +15,7 @@ class ProductoPDO {
         }
         return $arrayProductos;
     }
-    /**
-     * Funcion para registrar el usuario.
-     *
-     * Funcion a la que se le pasan como parametros el codigo del usuario, la descipcion y el password,
-     * se llama al metodo ejecutaConsulta y la realiza.
-     *
-     * @param string    $codUsuario   Codigo del usuario.
-     * @param string    $descripcion  Descripcion del usuario.
-     * @param string    $password     Contraseña del usuario.
-     * @return bool         Boolean que controla que se ha ejecutado bien
-     */
+
     public static function registrarProducto($nombre, $descripcion, $precio, $tipo, $imagen){
         $registroOK=false;
         $sql = "Insert into Producto values (?,?,?,?,?) ";
@@ -49,36 +26,18 @@ class ProductoPDO {
         return $registroOK;
     }
 
-    /**
-     * Funcion para editar un usuario.
-     *
-     * Funcion a la que se le pasan como parametros el codigo del usuario, la descipcion y el password,
-     * se llama al metodo ejecutaConsulta y la realiza.
-     *
-     * @param string    $codUsuario   Codigo del usuario.
-     * @param string    $descripcion  Descripcion del usuario.
-     * @param string    $password     Contraseña del usuario.
-     * @return bool         Boolean que controla que se ha ejecutado bien
-     */
-    public static function editarUsuario($codUsuario, $descripcion, $password){
+
+    public static function editarProducto($nombre,$descripcion, $precio,$tipo,$imagen){
         $modificacionOK=false;
-        $sql = "Update Usuarios SET descUsuario=?,password=? where codUsuario=?";
-        $resultado= DBPDO::ejecutaConsulta($sql,[$descripcion,$password,$codUsuario]);
+        $sql = "Update Producto SET descripcion=?,precio=?,tipo=?,imagenes=? where nombre=?";
+        $resultado= DBPDO::ejecutaConsulta($sql,[$descripcion,$precio, $tipo,$imagen,$nombre]);
         if ($resultado->rowCount()==1){
-            $modificacionOK = 'Modificacion OK';
+            $modificacionOK = true;
         }
         return $modificacionOK;
     }
 
-    /**
-     * Funcion para editar un usuario.
-     *
-     * Funcion a la que se le pasan como parametros el codigo del usuario, la descipcion y el password,
-     * se llama al metodo ejecutaConsulta y la realiza.
-     *
-     * @param string    $codUsuario   Codigo del usuario.
-     * @return bool         Boolean que controla que se ha ejecutado bien
-     */
+
     public static function eliminarProducto($nombre){
         $borradoOK=false;
         $sql = "Delete from Producto where nombre=?";
@@ -89,5 +48,18 @@ class ProductoPDO {
         return $borradoOK;
     }
 
+    public static function obtenerProducto($nombre){
+        $sql="select * from Producto WHERE nombre=?";
+        $arrayProducto=[];
+        $resultado=DBPDO::ejecutaConsulta($sql,[$nombre]);
+        if ($resultado->rowCount()==1){
+            $resultado = $resultado->fetchObject();
+            $arrayProducto['descripcion']= $resultado->descripcion;
+            $arrayProducto['precio']= $resultado->precio;
+            $arrayProducto['tipo'] = $resultado->tipo;
+            $arrayProducto['imagen'] = $resultado->imagenes;
+        }
+        return $arrayProducto;
+    }
 }
 ?>

@@ -8,7 +8,9 @@ $vistas=[
     'login'=>'View/vlogin.php',
     'panel'=>'View/vpanel.php',
     'productos'=>'View/vproductos.php',
-    'insertarProducto'=>'View/vinsertarProducto.php'
+    'insertarProducto'=>'View/vinsertarProducto.php',
+    'eliminarProducto'=>'View/veliminarProducto.php',
+    'editarProducto'=>'View/veditarProducto.php'
 ];
 $controladores=[
     'inicio'=>'Controller/cinicio.php',
@@ -18,7 +20,9 @@ $controladores=[
     'login'=>'Controller/clogin.php',
     'panel'=>'Controller/cpanel.php',
     'productos'=>'Controller/cproductos.php',
-    'insertarProducto'=>'Controller/cinsertarProducto.php'
+    'insertarProducto'=>'Controller/cinsertarProducto.php',
+    'eliminarProducto'=>'Controller/celiminarProducto.php',
+    'editarProducto'=>'Controller/ceditarProducto.php'
 
 ];
 ?>
