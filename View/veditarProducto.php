@@ -1,4 +1,4 @@
-<div class="container" style=" margin:0 auto;">
+<div class="container" style=" margin:0 auto;margin-top: 20px;">
     <div class="col-sm-6" style="width: 500px;margin-left: 20%;
     margin-top: 0px;">
         <div class="jumbotron" style="box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.75)" ;>
@@ -13,7 +13,14 @@
                   style="margin-left: 25%;" enctype="multipart/form-data">
                 <!--                --><?php //echo "<span style='color:red;'>",$error,"</span>"; ?>
                 <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorCodDepartamento']."</span>";?>
+                <div class="form-group input-group" >
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-camera"></span>
+                    </span>
 
+                    <img style="width:200px;height:200px;" src="<?php echo $producto->getImagen(); ?>">
+
+                </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-cutlery"></span>
@@ -49,25 +56,20 @@
                         <option value="Postre" <?php if($producto->getTipo()=='Postre'){echo 'selected';}?>>Postre</option>
                     </select>
                 </div>
-                <div style="display: -webkit-box;margin-right: 140px;">
-                <div class="form-group input-group" style=   " margin-left: -140px;">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-camera"></span>
+                <div class="form-group input-group" style="width: 240px;">
+                    <label class="input-group-btn">
+                    <span class="btn btn-default" style="background-color:#eee;">
+
+                        <span class="glyphicon glyphicon-camera" style="height:20px;"> Imagen</span>
+                     <input type="file" value="<?php echo $producto->getImagen(); ?>" style="display: none; width: 150px;" name="imagen" id="imagen" onchange="cambiarTexto()">
+                        <?php echo $mensajeError["errorSubida"]; ?>
+
                     </span>
 
-                    <img style="width:170px;height:170px;" src="<?php echo $producto->getImagen(); ?>">
-
-                </div>
-                <div class="form-group input-group">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-camera"></span>
-                    </span>
-
-                    <input type="file" class="form-control" name="imagen" style="width: 170px;"> <?php if (isset($mensajeError['errorSubida'])){echo $mensajeError['errorSubida'];} ?>
-
+                    </label>
+                    <input type="text" id="textoImagen"  class="form-control" readonly>
                 </div>
 
-                </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-danger" name="Editar" value="Editar">
                     <input type="submit" class="btn btn-primary" name="Volver" value="Volver">
@@ -77,3 +79,11 @@
         </div>
     </div>
 </div>
+<script>
+    function cambiarTexto() {
+        var inputImagen = document.getElementById("imagen");
+        var inputTexto = document.getElementById("textoImagen");
+
+        inputTexto.value = inputImagen.value;
+    }
+</script>

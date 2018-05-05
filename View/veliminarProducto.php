@@ -1,4 +1,4 @@
-<div class="container" style=" margin:0 auto;">
+<div class="container" style=" margin-top: 20px;">
     <div class="col-sm-6" style="width: 500px;margin-left: 20%;
     margin-top: 0px;">
         <div class="jumbotron" style="box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.75)" ;>
@@ -11,7 +11,13 @@
                   style="margin-left: 25%;" enctype="multipart/form-data">
                 <!--                --><?php //echo "<span style='color:red;'>",$error,"</span>"; ?>
                 <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorCodDepartamento']."</span>";?>
+                <div class="form-group input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-camera"></span>
+                    </span>
 
+                    <img style="width:200px;height:160px;" src="<?php echo $producto->getImagen(); ?>" readonly style="width: 200px;">
+                </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-cutlery"></span>
@@ -42,13 +48,7 @@
                     </span>
                     <input type="text" class="form-control" style="width: 200px;" value="<?php echo $producto->getTipo(); ?>" readonly>
                 </div>
-                <div class="form-group input-group">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-camera"></span>
-                    </span>
 
-                    <img style="width:200px;height:160px;" src="<?php echo $producto->getImagen(); ?>" readonly style="width: 200px;">
-                </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-danger" name="Eliminar" value="Eliminar">
                     <input type="submit" class="btn btn-primary" name="Volver" value="Volver">

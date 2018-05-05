@@ -1,7 +1,11 @@
 <?php
-//if (!isset($_SESSION['usuario'])){
-//    header("Location: ../index.php?pagina=login");
-//}
+if(!isset($_SESSION))
+{
+    session_start();
+}
+if (!isset($_SESSION['usuario'])){
+    header("Location: ../index.php?pagina=login");
+}
 if (isset($_GET['accion'])){
   if ($_GET['accion']=='cerrar'){
       session_destroy();

@@ -55,12 +55,18 @@
                         <option value="Postre">Postre</option>
                     </select>
                 </div>
-                <div class="form-group input-group">
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-camera"></span>
+                <div class="form-group input-group" style="width: 240px;">
+                    <label class="input-group-btn">
+                    <span class="btn btn-default" style="background-color:#eee;">
+
+                        <span class="glyphicon glyphicon-camera" style="height:20px;"> Imagen</span>
+                     <input type="file"  style="display: none; width: 150px;" name="imagen" id="imagen" onchange="cambiarTexto()">
+                        <?php echo $mensajeError["errorSubida"]; ?>
+
                     </span>
 
-                    <input type="file" class="form-control" name="imagen" style="width: 200px;"> <?php if (isset($mensajeError['errorSubida'])){echo $mensajeError['errorSubida'];} ?>
+                    </label>
+                    <input type="text" id="textoImagen"  class="form-control" readonly>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" name="Añadir" value="Añadir">
@@ -71,3 +77,11 @@
         </div>
     </div>
 </div>
+<script>
+    function cambiarTexto() {
+        var inputImagen = document.getElementById("imagen");
+        var inputTexto = document.getElementById("textoImagen");
+
+        inputTexto.value = inputImagen.value;
+    }
+</script>

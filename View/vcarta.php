@@ -45,6 +45,23 @@ echo "CARTA";
 ?>
     </tbody>
 </table>
+    <?php
+    $contador=0;
+        foreach ($arrayProductos as $producto){
+            switch ($producto['tipo']){
+                case 'Primero':
+                    echo '<div style="width: 600px;height: auto;margin:0 auto;">';
+
+                    echo '<img style="width:200px;height:200px;" src='.$producto['imagenes'].'></img>';
+                    echo '<h1 style="float: right">'.$producto['nombre'].'</h1>';
+                    echo '</div>';
+                    $contador++;
+                    break;
+            }
+        }
+    ?>
+    ?>
+
 
 
 

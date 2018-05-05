@@ -1,4 +1,5 @@
 <?php
+
 if(isset($_POST['Enviar'])) {//Si se pulsa el boton de enviar se valida el usuario.
     $codUsuario = $_POST['codUsuario'];
     $password = $_POST['password'];

@@ -22,7 +22,6 @@ if (isset($_GET['pagina'])) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>PANEL</h1>
 <div class="nav-side-menu">
     <div class="brand">Panel de administración</div>
 
