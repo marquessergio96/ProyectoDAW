@@ -25,9 +25,9 @@
         echo "<td><div style='width: auto;height: auto;margin-top:30px;'>";
         echo "<div class='btn-toolbar' role='toolbar'>";
         echo "<div class='btn-group'>";
-        echo '<a href="index.php?nombre='.$producto['nombre'].'&pagina=editarProducto" class="btn btn-warning"/>';
+        echo '<a href="index.php?codProducto='.$producto['codProducto'].'&pagina=editarProducto" class="btn btn-warning"/>';
         echo    "<span class='glyphicon glyphicon-cog'></span>";
-        echo '<a href="index.php?nombre='.$producto['nombre'].'&pagina=eliminarProducto" class="btn btn-danger"/>';
+        echo '<a href="index.php?codProducto='.$producto['codProducto'].'&pagina=eliminarProducto" class="btn btn-danger"/>';
         echo "<span class='glyphicon glyphicon-trash'></span>";
 
 

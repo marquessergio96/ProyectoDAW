@@ -9,7 +9,7 @@
 
                 </h2>
             </div>
-            <form action="<?PHP echo "index.php?pagina=editarProducto" . "&nombre=$nombre"; ?>" method="post" class="form-horizontal"
+            <form action="<?PHP echo "index.php?pagina=editarProducto" . "&codProducto=$codProducto"; ?>" method="post" class="form-horizontal"
                   style="margin-left: 25%;" enctype="multipart/form-data">
                 <!--                --><?php //echo "<span style='color:red;'>",$error,"</span>"; ?>
                 <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorCodDepartamento']."</span>";?>
@@ -17,6 +17,7 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-camera"></span>
                     </span>
+                    <input type="text" name="codProducto" value="<?php echo $producto->getCodProducto() ?>" style="display: none;">
 
                     <img style="width:200px;height:200px;" src="<?php echo $producto->getImagen(); ?>">
 

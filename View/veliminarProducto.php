@@ -7,7 +7,7 @@
                     Borrar producto
                 </h2>
             </div>
-            <form action="<?PHP echo "index.php?pagina=eliminarProducto" . "&nombre=$nombre"; ?>" method="post" class="form-horizontal"
+            <form action="<?PHP echo "index.php?pagina=eliminarProducto" . "&codProducto=$codProducto"; ?>" method="post" class="form-horizontal"
                   style="margin-left: 25%;" enctype="multipart/form-data">
                 <!--                --><?php //echo "<span style='color:red;'>",$error,"</span>"; ?>
                 <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorCodDepartamento']."</span>";?>
@@ -15,7 +15,7 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-camera"></span>
                     </span>
-
+                <input type="text" name="codProducto" value="<?php echo $producto->getCodProducto() ?>" style="display: none;">
                     <img style="width:200px;height:160px;" src="<?php echo $producto->getImagen(); ?>" readonly style="width: 200px;">
                 </div>
                 <div class="form-group input-group">
@@ -24,7 +24,7 @@
                     </span>
 
                     <input type="text" class="form-control" placeholder="Nombre producto" style="width: 200px;"
-                           name="nombre" value="<?php echo $_GET['nombre']; ?>" readonly >
+                           name="nombre" value="<?php echo $producto->getNombre() ?>" readonly >
                 </div>
                 <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorDescripcion']."</span>";?>
                 <div class="form-group input-group">

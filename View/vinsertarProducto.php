@@ -50,9 +50,9 @@
                     </span>
                     <select class="form-control" name="tipo" style="width: 200px;">
                         <option>Tipo de producto</option>
-                        <option value="Primero">Primero</option>
-                        <option value="Segundo">Segundo</option>
-                        <option value="Postre">Postre</option>
+                        <option value="Primero" <?php if(isset($_POST['tipo'])&& $_POST['tipo']=='Primero'){echo 'selected';}?>>Primero</option>
+                        <option value="Segundo" <?php if(isset($_POST['tipo'])&& $_POST['tipo']=='Segundo'){echo 'selected';}?>>Segundo</option>
+                        <option value="Postre" <?php if(isset($_POST['tipo'])&& $_POST['tipo']=='Postre'){echo 'selected';}?>>Postre</option>
                     </select>
                 </div>
                 <div class="form-group input-group" style="width: 240px;">
@@ -60,13 +60,15 @@
                     <span class="btn btn-default" style="background-color:#eee;">
 
                         <span class="glyphicon glyphicon-camera" style="height:20px;"> Imagen</span>
-                     <input type="file"  style="display: none; width: 150px;" name="imagen" id="imagen" onchange="cambiarTexto()">
+                     <input type="file"  style="display: none; width: 150px;" name="imagen" id="imagen" onchange="cambiarTexto()" >
                         <?php echo $mensajeError["errorSubida"]; ?>
 
                     </span>
 
                     </label>
-                    <input type="text" id="textoImagen"  class="form-control" readonly>
+                    <input type="text" id="textoImagen"  name="textoImagen" <?php if (isset($_POST['textoImagen'])) {
+                        echo "value=" . $_POST['textoImagen'];
+                    } ?> class="form-control" readonly>
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" name="Añadir" value="Añadir">

@@ -1,7 +1,7 @@
 <?php
-if (isset($_GET['nombre'])){
-    $nombre=$_GET['nombre'];
-    $producto=Producto::obtenerProducto($nombre);
+if (isset($_GET['codProducto'])){
+    $codProducto=$_GET['codProducto'];
+    $producto=Producto::obtenerProducto($codProducto);
     if(isset($_POST['Eliminar'])){
         if ($producto->eliminarProducto()){//Si el metodo devuelve 1 es que se ha borrado con existo y se redirigira al index
             header("Location:index.php?pagina=productos");

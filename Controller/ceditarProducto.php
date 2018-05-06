@@ -8,14 +8,14 @@ $mensajeError = array(//Array para guardar los mensajes de errores.
     "errorDescripcion"=>'',
     "errorSubida"=>''
 );
-if (isset($_GET['nombre'])) {
-    $nombre = $_GET['nombre'];
-    $producto = Producto::obtenerProducto($nombre);
+if (isset($_GET['codProducto'])) {
+    $codProducto = $_GET['codProducto'];
+    $producto = Producto::obtenerProducto($codProducto);
 }
 if(isset($_POST['Editar'])){
 
     $mensajeError["errorNombre"] = comprobarTexto($_POST['nombre'], 100, 1, 1);
-    $mensajeError["errorDescripcion"]=comprobarTexto($_POST['descripcion'],100,1,1);
+    $mensajeError["errorDescripcion"]=comprobarTexto($_POST['descripcion'],1000,1,1);
 
     if ($_FILES["imagen"]["tmp_name"] != "") {
         $rutaImagenPerfil = PATHIMAGENES . $producto->getNombre().".jpg";
@@ -32,7 +32,11 @@ if(isset($_POST['Editar'])){
 }
 
 if (isset($_POST['Editar']) && $entradaOK){
-
+    if($_POST['nombre']!=""){
+        $nombre=$_POST['nombre'];
+    }else{
+        $nombre=$producto->getNombre();
+    }
     if ($_POST['descripcion'] != "") {
         $descripcion = $_POST['descripcion'];
     } else {
@@ -54,7 +58,7 @@ if (isset($_POST['Editar']) && $entradaOK){
         $imagenPerfil = $producto->getImagen();
     }
 
-    $producto->editarProducto($descripcion,$precio,$tipo,$imagenPerfil);
+    $producto->editarProducto($nombre,$descripcion,$precio,$tipo,$imagenPerfil);
     $arrayProductos=ProductoPDO::getProductos();
     header("Location: index.php?pagina=productos");
 

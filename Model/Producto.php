@@ -21,6 +21,7 @@ require_once 'ProductoPDO.php';
 class Producto{
     //Atributos del objeto usuario.
 
+    private $codProducto;
 
     private $nombre;
 
@@ -40,8 +41,9 @@ class Producto{
      * @param string $tipo
      * @param string $imagen
      */
-    public function __construct($nombre, $descripcion, $precio, $tipo, $imagen)
+    public function __construct($codProducto,$nombre, $descripcion, $precio, $tipo, $imagen)
     {
+        $this->codProducto=$codProducto;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;
         $this->precio = $precio;
@@ -54,6 +56,10 @@ class Producto{
         return ProductoPDO::getProductos();
     }
 
+    public static function getProductosTipo($tipo){
+        return ProductoPDO::getProductosTipo($tipo);
+    }
+
 
     public static function registrarProducto($nombre, $descripcion, $precio, $tipo, $imagen){
         $producto=null;
@@ -63,19 +69,20 @@ class Producto{
         return $producto;
     }
 
-    public static function obtenerProducto($nombre){
+    public static function obtenerProducto($codProducto){
         $producto=null;
-        $arrayProducto=ProductoPDO::obtenerProducto($nombre);
+        $arrayProducto=ProductoPDO::obtenerProducto($codProducto);
         if (!empty($arrayProducto)){
-            $producto= new Producto($nombre,$arrayProducto['descripcion'],$arrayProducto['precio'],$arrayProducto['tipo'],$arrayProducto['imagen']);
+            $producto= new Producto($codProducto,$arrayProducto['nombre'],$arrayProducto['descripcion'],$arrayProducto['precio'],$arrayProducto['tipo'],$arrayProducto['imagen']);
         }
         return $producto;
     }
 
-    public function editarProducto($descripcion,$precio,$tipo,$imagen)
+    public function editarProducto($nombre,$descripcion,$precio,$tipo,$imagen)
     {
-        $nombre = $this->getNombre();
-        if(ProductoPDO::editarProducto($nombre,$descripcion, $precio,$tipo,$imagen)){
+        $codProducto = $this->getCodProducto();
+        if(ProductoPDO::editarProducto($codProducto,$nombre,$descripcion, $precio,$tipo,$imagen)){
+            $this->setNombre($nombre);
             $this->setDescripcion($descripcion);
             $this->setPrecio($precio);
             $this->setTipo($tipo);
@@ -87,8 +94,8 @@ class Producto{
 
 
     public function eliminarProducto(){
-        $nombre=$this->getNombre();
-        return ProductoPDO::eliminarProducto($nombre);
+        $codProducto=$this->getCodProducto();
+        return ProductoPDO::eliminarProducto($codProducto);
     }
 
     /**
@@ -140,7 +147,7 @@ class Producto{
     }
 
     /**
-     * @return datetime
+     * @return string
      */
     public function getTipo()
     {
@@ -169,6 +176,22 @@ class Producto{
     public function setImagen($imagen)
     {
         $this->imagen = $imagen;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCodProducto()
+    {
+        return $this->codProducto;
+    }
+
+    /**
+     * @param mixed $codProducto
+     */
+    public function setCodProducto($codProducto)
+    {
+        $this->codProducto = $codProducto;
     }
 
 

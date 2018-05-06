@@ -8,12 +8,12 @@ $mensajeError = array(//Array para guardar los mensajes de errores.
     "errorSubida"=>''
 );
 if(isset($_POST['Añadir'])){
-
+    $nombre=str_replace(' ', '', $_POST['nombre']);
     $mensajeError["errorNombre"] = comprobarTexto($_POST['nombre'], 100, 1, 1);
-    $mensajeError["errorDescripcion"]=comprobarTexto($_POST['descripcion'],100,1,1);
+    $mensajeError["errorDescripcion"]=comprobarTexto($_POST['descripcion'],1000,1,1);
 
 //    if ($_FILES["imagen"]["tmp_name"] != "") {
-        $rutaImagenPerfil = PATHIMAGENES . $_POST['nombre'].".jpg";
+        $rutaImagenPerfil = PATHIMAGENES . $nombre.".jpg";
         //Subida  de la imagen de perfil
             if (!move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaImagenPerfil)) {
                 $mensajeError["errorSubida"] = "Lo sentimos, ha ocurrido un error en la subida";
