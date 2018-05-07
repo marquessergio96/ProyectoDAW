@@ -10,7 +10,8 @@ $vistas=[
     'productos'=>'View/vproductos.php',
     'insertarProducto'=>'View/vinsertarProducto.php',
     'eliminarProducto'=>'View/veliminarProducto.php',
-    'editarProducto'=>'View/veditarProducto.php'
+    'editarProducto'=>'View/veditarProducto.php',
+    'modificarAdmin'=>'View/vmodificarAdmin.php'
 ];
 $controladores=[
     'inicio'=>'Controller/cinicio.php',
@@ -22,7 +23,8 @@ $controladores=[
     'productos'=>'Controller/cproductos.php',
     'insertarProducto'=>'Controller/cinsertarProducto.php',
     'eliminarProducto'=>'Controller/celiminarProducto.php',
-    'editarProducto'=>'Controller/ceditarProducto.php'
+    'editarProducto'=>'Controller/ceditarProducto.php',
+    'modificarAdmin'=>'Controller/cmodificarAdmin.php'
 
 ];
 ?>

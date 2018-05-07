@@ -25,7 +25,7 @@ class Usuario{
     /**
      * @var string  $codUsuario     Codigo del usuario.
      */
-    private $codUsuario;
+    private $nombre;
     /**
      * @var string  $password       Contraseña del usuario.
      */
@@ -41,8 +41,8 @@ class Usuario{
          * @param   string  $codUsuario     codigo del usuario.
          * @param   string  $password       contraseña del usuario.
          */
-        public function __construct($codUsuario, $password){
-            $this->codUsuario=$codUsuario;
+        public function __construct($nombre, $password){
+            $this->nombre=$nombre;
             $this->password=$password;
         }
         /**
@@ -57,33 +57,16 @@ class Usuario{
          * @return object   $usuario    Objeto de la clase Usuario que contien la informacion del usuario.
          */
 
-        public static function validarUsuario($codUsuario,$password){
+        public static function validarUsuario($nombre,$password){
             $usuario=null;
-            $arrayUsuario=UsuarioPDO::validarUsuario($codUsuario,$password);
+            $arrayUsuario=UsuarioPDO::validarUsuario($nombre,$password);
             if(!empty($arrayUsuario)) {
-                $usuario = new Usuario($codUsuario, $password);
+                $usuario = new Usuario($nombre, $password);
             }
             return $usuario;
         }
 
-        /**
-         * Funcion para registrar un usuario
-         *
-         * Funcion a la que se le pasan como parametros el codigo del usuario, la descripcion y la contraseña y llama
-         * a la funcion registrarUsuario de UsuarioPDO.
-         *
-         * @param   string  $codUsuario   Codigo del usuario que le pasamos.
-         * @param string $descripcion  Descripcion del usuario.
-         * @param string $password     Contraseña del usuario
-         * @return null|Usuario Objeto de la clase Usuario
-         */
-    public static function registrarUsuario($codUsuario, $password){
-            $usuario=null;
-            if (UsuarioPDO::registrarUsuario($codUsuario,$password)){
-                $usuario=new Usuario($codUsuario,$password);
-            }
-            return $usuario;
-        }
+
 
         /**
          * Funcion para editar un usuario.
@@ -91,34 +74,38 @@ class Usuario{
          * Funcion a la que se le pasan por parametro el codigo del usuario, la descripcion y la contraseña, esta funcion
          * llama a editar usuario de la clase UsuarioPDO.
          *
-         * @param string $codUsuario   Codigo del usuario.
-         * @param string $descripcion  Descripcion del usuario.
+         * @param string $nombre   Codigo del usuario.
          * @param string $password     Contraseña del usuario.
          * @return bool         Boolean que dice si la consulta se ha ejecutado bien o no.
          */
-    public function editarUsuario($password){
-            $codUsuario=$this->getCodUsuario();
+        public function editarUsuario($password){
+            $nombre=$this->getNombre();
             if (empty($password)){
                 $password=hash('sha256',$this->getPassword());
             }
-            return UsuarioPDO::editarUsuario($codUsuario,$password);
+            return UsuarioPDO::editarUsuario($nombre,$password);
             }
 
 
 
-    public static function obtenerUsuarioDuplicado($codUsuario){
-        return UsuarioPDO::obtenerUsuarioDuplicado($codUsuario);
-    }
+
     /**
-     * Función getCodUsuario.
-     *
-     * Función que devuelve el codigo del usuario
-     *
-     * @return mixed    $codUsuario     Codigo del ussuario.
+     * @return string
      */
-    public function getCodUsuario(){
-            return $this->codUsuario;
-        }
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * @param string $nombre
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
+
+
 
 
 

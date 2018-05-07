@@ -39,7 +39,7 @@ if (isset($_GET['pagina'])) {
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="../Controller/cpanel.php?accion=modificarAdmin">
                     <i class="glyphicon glyphicon-edit"></i> Modificar admin
                 </a>
             </li>

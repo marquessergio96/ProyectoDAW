@@ -76,16 +76,16 @@ class UsuarioPDO implements UsuarioDB
      * @param string $password Contraseña del usuario.
      * @return bool         Boolean que controla que se ha ejecutado bien
      */
-    public static function editarUsuario($password)
-    {
-        $modificacionOK = false;
-        $sql = "Update Usuario password=? where nombre=?";
-        $resultado = DBPDO::ejecutaConsulta($sql, [$password]);
-        if ($resultado->rowCount() == 1) {
-            $modificacionOK = 'Modificacion OK';
+    public static function editarUsuario($nombre,$password){
+        $modificacionOK=false;
+        $sql = "Update Usuario SET password=? where nombre=?";
+        $resultado= DBPDO::ejecutaConsulta($sql,[$password,$nombre]);
+        if ($resultado->rowCount()==1){
+            $modificacionOK = true;
         }
         return $modificacionOK;
     }
+
 }
 
 
