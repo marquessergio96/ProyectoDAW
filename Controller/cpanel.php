@@ -18,6 +18,9 @@ if (isset($_GET['accion'])){
     if($_GET['accion']=='modificarAdmin'){
         header("Location: ../index.php?pagina=modificarAdmin");
     }
+    if($_GET['accion']=='panelReservas'){
+        header("Location: ../index.php?pagina=panelReservas");
+    }
 } else {
     require_once 'View/layoutpanel.php';
 }

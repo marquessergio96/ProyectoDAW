@@ -11,7 +11,8 @@ $vistas=[
     'insertarProducto'=>'View/vinsertarProducto.php',
     'eliminarProducto'=>'View/veliminarProducto.php',
     'editarProducto'=>'View/veditarProducto.php',
-    'modificarAdmin'=>'View/vmodificarAdmin.php'
+    'modificarAdmin'=>'View/vmodificarAdmin.php',
+    'panelReservas'=>'View/vpanelReservas.php'
 ];
 $controladores=[
     'inicio'=>'Controller/cinicio.php',
@@ -24,7 +25,8 @@ $controladores=[
     'insertarProducto'=>'Controller/cinsertarProducto.php',
     'eliminarProducto'=>'Controller/celiminarProducto.php',
     'editarProducto'=>'Controller/ceditarProducto.php',
-    'modificarAdmin'=>'Controller/cmodificarAdmin.php'
+    'modificarAdmin'=>'Controller/cmodificarAdmin.php',
+    'panelReservas'=>'Controller/cpanelReservas.php'
 
 ];
 ?>

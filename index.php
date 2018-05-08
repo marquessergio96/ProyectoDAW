@@ -1,6 +1,7 @@
 <?php
 require_once 'Model/Usuario.php';
 require_once 'Model/Producto.php';
+require_once 'Model/Reserva.php';
 require_once 'Config/DBconfig.php';
 require_once 'Core/LibreriaValidacion.php';
 require_once 'Config/config.php';

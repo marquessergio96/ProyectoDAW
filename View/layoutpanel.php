@@ -29,7 +29,7 @@ if (isset($_GET['pagina'])) {
     <div class="menu-list">
         <ul id="menu-content" class="menu-content collapse out">
             <li>
-                <a href="#">
+                <a href="../Controller/cpanel.php?accion=panelReservas">
                     <i class="glyphicon glyphicon-pencil"></i> Reservas
                 </a>
 

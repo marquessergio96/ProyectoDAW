@@ -70,10 +70,9 @@ body{
     font-weight: bold;
 }
 #titulo{
-    color: white	;
+    color: white;
     box-shadow: 0px 0px 5px 5px rgba(0,0,0,1);
-
-    background-color: #696969	;
+    background-color: #696969;
     font-family: "tangerine",cursive;
     font-size: 120px;
     text-decoration: underline;

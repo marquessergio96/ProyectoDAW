@@ -15,8 +15,8 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-camera"></span>
                     </span>
-                <input type="text" name="codProducto" value="<?php echo $producto->getCodProducto() ?>" style="display: none;">
-                    <img style="width:200px;height:160px;" src="<?php echo $producto->getImagen(); ?>" readonly style="width: 200px;">
+                <input type="text" name="codProducto" value="<?php echo $reserva->getCodProducto() ?>" style="display: none;">
+                    <img style="width:200px;height:160px;" src="<?php echo $reserva->getImagen(); ?>" readonly style="width: 200px;">
                 </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
@@ -24,7 +24,7 @@
                     </span>
 
                     <input type="text" class="form-control" placeholder="Nombre producto" style="width: 200px;"
-                           name="nombre" value="<?php echo $producto->getNombre() ?>" readonly >
+                           name="nombre" value="<?php echo $reserva->getNombre() ?>" readonly >
                 </div>
                 <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorDescripcion']."</span>";?>
                 <div class="form-group input-group">
@@ -33,20 +33,20 @@
                     </span>
 
                     <input type="text" class="form-control" name="descripcion" style="width: 200px;"
-                           placeholder="Descripción producto" value="<?php echo $producto->getDescripcion(); ?>" readonly>
+                           placeholder="Descripción producto" value="<?php echo $reserva->getDescripcion(); ?>" readonly>
                 </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-eur"></span>
                     </span>
                     <input type="number" class="form-control" min="0" max="500"
-                           name="precio" placeholder="Precio" value="<?php echo $producto->getPrecio(); ?>" placeholder="Precio" readonly style="width: 200px;">
+                           name="precio" placeholder="Precio" value="<?php echo $reserva->getPrecio(); ?>" placeholder="Precio" readonly style="width: 200px;">
                 </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-tag"></span>
                     </span>
-                    <input type="text" class="form-control" style="width: 200px;" value="<?php echo $producto->getTipo(); ?>" readonly>
+                    <input type="text" class="form-control" style="width: 200px;" value="<?php echo $reserva->getTipo(); ?>" readonly>
                 </div>
 
                 <div class="form-group">
