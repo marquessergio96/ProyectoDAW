@@ -12,7 +12,9 @@ $vistas=[
     'eliminarProducto'=>'View/veliminarProducto.php',
     'editarProducto'=>'View/veditarProducto.php',
     'modificarAdmin'=>'View/vmodificarAdmin.php',
-    'panelReservas'=>'View/vpanelReservas.php'
+    'panelReservas'=>'View/vpanelReservas.php',
+    'borrarReserva'=>'View/vborrarReserva.php',
+    'editarReserva'=>'View/veditarReserva.php'
 ];
 $controladores=[
     'inicio'=>'Controller/cinicio.php',
@@ -26,7 +28,8 @@ $controladores=[
     'eliminarProducto'=>'Controller/celiminarProducto.php',
     'editarProducto'=>'Controller/ceditarProducto.php',
     'modificarAdmin'=>'Controller/cmodificarAdmin.php',
-    'panelReservas'=>'Controller/cpanelReservas.php'
-
+    'panelReservas'=>'Controller/cpanelReservas.php',
+    'borrarReserva'=>'Controller/cborrarReserva.php',
+    'editarReserva'=>'Controller/ceditarReserva.php'
 ];
 ?>

@@ -13,12 +13,12 @@ if (isset($_GET['codProducto'])) {
     $producto = Producto::obtenerProducto($codProducto);
 }
 if(isset($_POST['Editar'])){
-
+    $nombre=str_replace(' ', '', $_POST['nombre']);
     $mensajeError["errorNombre"] = comprobarTexto($_POST['nombre'], 100, 1, 1);
     $mensajeError["errorDescripcion"]=comprobarTexto($_POST['descripcion'],1000,1,1);
 
     if ($_FILES["imagen"]["tmp_name"] != "") {
-        $rutaImagenPerfil = PATHIMAGENES . $producto->getNombre().".jpg";
+        $rutaImagenPerfil = PATHIMAGENES . $nombre.".jpg";
         //Subida  de la imagen de perfil
             if (!move_uploaded_file($_FILES["imagen"]["tmp_name"], $rutaImagenPerfil)) {
                 $mensajeError["errorSubida"] = "Lo sentimos, ha ocurrido un error en la subida";

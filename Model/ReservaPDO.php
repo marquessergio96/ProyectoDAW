@@ -23,10 +23,10 @@ Class ReservaPDO{
     }
 
 
-    public static function editarProducto($codProducto,$nombre,$descripcion, $precio,$tipo,$imagen){
+    public static function editarReserva($codReserva,$nombre, $email, $fecha, $hora, $personas){
         $modificacionOK=false;
-        $sql = "Update Producto SET nombre=?,descripcion=?,precio=?,tipo=?,imagenes=? where codProducto=?";
-        $resultado= DBPDO::ejecutaConsulta($sql,[$nombre,$descripcion,$precio, $tipo,$imagen,$codProducto]);
+        $sql = "Update Reserva SET nombre=?,email=?,fecha=?,hora=?,numeroPersonas=? where codReserva=?";
+        $resultado= DBPDO::ejecutaConsulta($sql,[$nombre, $email, $fecha, $hora, $personas,$codReserva]);
         if ($resultado->rowCount()==1){
             $modificacionOK = true;
         }
@@ -34,28 +34,29 @@ Class ReservaPDO{
     }
 
 
-    public static function eliminarProducto($codProducto){
+    public static function anularReserva($codReserva){
         $borradoOK=false;
-        $sql = "Delete from Producto where codProducto=?";
-        $resultado= DBPDO::ejecutaConsulta($sql,[$codProducto]);
+        $sql = "Update Reserva set reservaActiva=false where codReserva=?";
+        $resultado= DBPDO::ejecutaConsulta($sql,[$codReserva]);
         if ($resultado->rowCount()==1){
             $borradoOK = true;
         }
         return $borradoOK;
     }
 
-    public static function obtenerProducto($codProducto){
-        $sql="select * from Producto WHERE codProducto=?";
-        $arrayProducto=[];
-        $resultado=DBPDO::ejecutaConsulta($sql,[$codProducto]);
+    public static function obtenerReserva($codReserva){
+        $sql="select * from Reserva WHERE codReserva=?";
+        $arrayReserva=[];
+        $resultado=DBPDO::ejecutaConsulta($sql,[$codReserva]);
         if ($resultado->rowCount()==1){
             $resultado = $resultado->fetchObject();
-            $arrayProducto['nombre']=$resultado->nombre;
-            $arrayProducto['descripcion']= $resultado->descripcion;
-            $arrayProducto['precio']= $resultado->precio;
-            $arrayProducto['tipo'] = $resultado->tipo;
-            $arrayProducto['imagen'] = $resultado->imagenes;
+            $arrayReserva['nombre']=$resultado->nombre;
+            $arrayReserva['email']= $resultado->email;
+            $arrayReserva['fecha']= $resultado->fecha;
+            $arrayReserva['hora'] = $resultado->hora;
+            $arrayReserva['personas'] = $resultado->numeroPersonas;
+            $arrayReserva['estado'] = $resultado->reservaActiva;
         }
-        return $arrayProducto;
+        return $arrayReserva;
     }
 }

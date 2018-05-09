@@ -29,11 +29,9 @@
             echo "<td><div style='width: auto;height: auto;'>";
             echo "<div class='btn-toolbar' role='toolbar'>";
             echo "<div class='btn-group'>";
-            echo '<a href="index.php?codReserva='.$reserva['codReserva'].'&pagina=editarProducto" class="btn btn-success"/>';
-            echo    "<span class='glyphicon glyphicon-zoom-in'></span>";
-            echo '<a href="index.php?codReserva='.$reserva['codReserva'].'&pagina=editarProducto" class="btn btn-warning"/>';
+            echo '<a href="index.php?codReserva='.$reserva['codReserva'].'&pagina=editarReserva" class="btn btn-warning"/>';
             echo    "<span class='glyphicon glyphicon-cog'></span>";
-            echo '<a href="index.php?codReserva='.$reserva['codReserva'].'&pagina=eliminarProducto" class="btn btn-danger"/>';
+            echo '<a href="index.php?codReserva='.$reserva['codReserva'].'&pagina=borrarReserva" class="btn btn-danger"/>';
             echo "<span class='glyphicon glyphicon-trash'></span>";
 
 

@@ -153,4 +153,8 @@ body {
     margin: 0px;
     padding: 0px;
     background-image: url("../media/fondopanel.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }

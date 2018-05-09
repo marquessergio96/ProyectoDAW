@@ -53,16 +53,15 @@ require_once 'ReservaPDO.php';
             return $reserva;
         }
 
-        public function editarReserva($nombre,$email, $fecha,$hora,$personas,$estado)
+        public function editarReserva($nombre,$email, $fecha,$hora,$personas)
         {
             $codReserva = $this->getCodReserva();
-            if(ProductoPDO::editarProducto($codReserva,$nombre,$email, $fecha,$hora,$personas,$estado)){
+            if(ReservaPDO::editarReserva($codReserva,$nombre,$email, $fecha,$hora,$personas)){
                 $this->setNombre($nombre);
                 $this->setEmail($email);
                 $this->setFecha($fecha);
                 $this->setHora($hora);
                 $this->setPersonas($personas);
-                $this->setEstado($estado);
 
             }
             return false;
@@ -70,9 +69,9 @@ require_once 'ReservaPDO.php';
 
 
 
-        public function eliminarReserva(){
+        public function anularReserva(){
             $codReserva=$this->getCodReserva();
-            return ReservaPDO::eliminarReserva($codReserva);
+            return ReservaPDO::anularReserva($codReserva);
         }
 
         /**

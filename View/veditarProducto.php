@@ -17,9 +17,9 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-camera"></span>
                     </span>
-                    <input type="text" name="codProducto" value="<?php echo $reserva->getCodProducto() ?>" style="display: none;">
+                    <input type="text" name="codProducto" value="<?php echo $producto->getCodProducto() ?>" style="display: none;">
 
-                    <img style="width:200px;height:200px;" src="<?php echo $reserva->getImagen(); ?>">
+                    <img style="width:200px;height:200px;" src="<?php echo $producto->getImagen(); ?>">
 
                 </div>
                 <div class="form-group input-group">
@@ -28,7 +28,7 @@
                     </span>
 
                     <input type="text" class="form-control" placeholder="Nombre producto" style="width: 200px;"
-                           name="nombre" value="<?php echo $reserva->getNombre()?>"  >
+                           name="nombre" value="<?php echo $producto->getNombre()?>"  >
                 </div>
                 <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorDescripcion']."</span>";?>
                 <div class="form-group input-group">
@@ -37,14 +37,14 @@
                     </span>
 
                     <input type="text" class="form-control" name="descripcion" style="width: 200px;"
-                           placeholder="Descripción producto" value="<?php echo $reserva->getDescripcion(); ?>" >
+                           placeholder="Descripción producto" value="<?php echo $producto->getDescripcion(); ?>" >
                 </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-eur"></span>
                     </span>
                     <input type="number" class="form-control" min="0" max="500"
-                           name="precio" placeholder="Precio" value="<?php echo $reserva->getPrecio(); ?>" placeholder="Precio" step="0.1" style="width: 200px;">
+                           name="precio" placeholder="Precio" value="<?php echo $producto->getPrecio(); ?>" placeholder="Precio" step="0.1" style="width: 200px;">
                 </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
@@ -52,9 +52,9 @@
                     </span>
                     <select class="form-control" name="tipo" style="width: 200px;">
                         <option>Tipo de producto</option>
-                        <option value="Primero" <?php if($reserva->getTipo()=='Primero'){echo 'selected';}?>>Primero</option>
-                        <option value="Segundo" <?php if($reserva->getTipo()=='Segundo'){echo 'selected';}?>>Segundo</option>
-                        <option value="Postre" <?php if($reserva->getTipo()=='Postre'){echo 'selected';}?>>Postre</option>
+                        <option value="Primero" <?php if($producto->getTipo()=='Primero'){echo 'selected';}?>>Primero</option>
+                        <option value="Segundo" <?php if($producto->getTipo()=='Segundo'){echo 'selected';}?>>Segundo</option>
+                        <option value="Postre" <?php if($producto->getTipo()=='Postre'){echo 'selected';}?>>Postre</option>
                     </select>
                 </div>
                 <div class="form-group input-group" style="width: 240px;">
@@ -62,7 +62,7 @@
                     <span class="btn btn-default" style="background-color:#eee;">
 
                         <span class="glyphicon glyphicon-camera" style="height:20px;"> Imagen</span>
-                     <input type="file" value="<?php echo $reserva->getImagen(); ?>" style="display: none; width: 150px;" name="imagen" id="imagen" onchange="cambiarTexto()">
+                     <input type="file" value="<?php echo $producto->getImagen(); ?>" style="display: none; width: 150px;" name="imagen" id="imagen" onchange="cambiarTexto()">
                         <?php echo $mensajeError["errorSubida"]; ?>
 
                     </span>
