@@ -6,15 +6,15 @@
 <img src="../Webroot/media/fondo-restaurante.jpg" style="width: 100%;height:80%;display: block;
      position: relative;"/>
 
-    <h1 id="tituloInicio1" >PROYECTO DAW</h1>
-    <h2 id="tituloInicio2">ESPECIALIDAD EN ALGO</h2>
+    <h1 id="tituloInicio1" >RESTAURANTE EL MARQUÉS</h1>
+    <h2 id="tituloInicio2">ESPECIALIDAD EN HACER COSAS BIEN</h2>
 
 </div>
 
 <nav class="navbar navbar-inverse" style="height: auto;background-color: #0F0F0F">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#" id="tituloNav"><u>PROYECTO DAW</u></a>
+            <a class="navbar-brand" href="#" id="tituloNav"><u>EL MARQUÉS</u></a>
         </div>
         <ul class="nav navbar-nav" style="float:right;margin-right: 40px;height:75px;">
             <li class="botonesInicio"><a href="index.php?pagina=inicio"">INICIO</a></li>

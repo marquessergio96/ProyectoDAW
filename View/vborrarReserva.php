@@ -4,7 +4,7 @@
         <div class="jumbotron" style="box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.75)" ;>
             <div class="form-group" style="text-align: center;margin-top:-50px;">
                 <h2>
-                    Borrar reserva
+                    Anular reserva
                 </h2>
             </div>
             <form action="<?PHP echo "index.php?pagina=borrarReserva" . "&codReserva=$codReserva"; ?>" method="post" class="form-horizontal"

@@ -32,8 +32,8 @@ require_once 'ReservaPDO.php';
         }
 
 
-        public static function getReservas(){
-            return ReservaPDO::getReservas();
+        public static function getReservas($estado){
+            return ReservaPDO::getReservas($estado);
         }
 
         public static function registrarReserva($nombre, $email, $fecha, $hora, $personas,$estado){
@@ -74,6 +74,10 @@ require_once 'ReservaPDO.php';
             return ReservaPDO::anularReserva($codReserva);
         }
 
+        public function terminarReserva(){
+            $codReserva=$this->getCodReserva();
+            return ReservaPDO::terminarReserva($codReserva);
+        }
         /**
          * @return mixed
          */

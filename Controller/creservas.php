@@ -8,7 +8,9 @@ if (isset($_POST['Reservar'])) {
     echo $_POST['hora'];
     echo $_POST['personas'];
 
-    Reserva::registrarReserva($_POST['nombre'],$_POST['email'],$_POST['fecha'],$_POST['hora'],$_POST['personas'],1);
+    if(Reserva::registrarReserva($_POST['nombre'],$_POST['email'],$_POST['fecha'],$_POST['hora'],$_POST['personas'],'Activa')){
+        header("Location: ../index.php?pagina=reservas");
+    }
 
 }
 require_once 'View/layout.php';

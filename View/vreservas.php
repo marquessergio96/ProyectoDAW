@@ -23,7 +23,7 @@
 <div class="container" style="background-color: white;width:700px;height: auto;border-radius:5px;border: 10px solid black;">
     <span>Reservar mesa en</span><strong> Restaurante el Marqués</strong><br><span>c/ Medul nº22</span>
     <div class="col-xs-12" style="display: inline-flex;padding:10px;height: auto;">
-        <div class="col-xs-6" style="z-index:0;background-color: grey;width: 350px;height: auto;margin-bottom:5px;padding-bottom:5px;height:auto;margin-right: 10px;"><span style="font-size: 70px;color:white;">1</span> <span style="color: white;">Seleccion el dia</span><hr>
+        <div class="col-xs-6" style="z-index:0;background-color: grey;width: 350px;height: auto;margin-bottom:5px;padding-bottom:5px;height:auto;margin-right: 10px;"><span style="font-size: 70px;color:white;">1</span> <span style="color: white;">Selecciona el dia</span><hr>
         <input type="date" name="fecha" class="form-control" style="width: 200px;">
     </div>
         <div class="col-xs-6" style="z-index:0;background-color: grey;width: 350px;margin-bottom:5px;padding-bottom:5px;height: auto;"> <span style="font-size: 70px;color:white;">2</span> <span style="color: white;">Numero de personas</span><hr>
@@ -31,7 +31,7 @@
     </div>
     </div>
     <div class="col-xs-12" style="display: inline-flex;padding:10px;">
-        <div class="col-xs-6" style="z-index:0;background-color: grey;width: 350px;height:auto;margin-bottom:5px;padding-bottom:5px;margin-right: 10px;"><span style="font-size: 70px;color:white;">3</span> <span style="color: white;">Seleccion la hora</span><hr>
+        <div class="col-xs-6" style="z-index:0;background-color: grey;width: 350px;height:auto;margin-bottom:5px;padding-bottom:5px;margin-right: 10px;"><span style="font-size: 70px;color:white;">3</span> <span style="color: white;">Selecciona la hora</span><hr>
             <select class="form-control" name="hora" style="width:100px;">
                 <option value="13:00">13:00</option>
                 <option value="14:00">14:00</option>

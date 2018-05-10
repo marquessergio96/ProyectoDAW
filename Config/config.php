@@ -14,7 +14,9 @@ $vistas=[
     'modificarAdmin'=>'View/vmodificarAdmin.php',
     'panelReservas'=>'View/vpanelReservas.php',
     'borrarReserva'=>'View/vborrarReserva.php',
-    'editarReserva'=>'View/veditarReserva.php'
+    'editarReserva'=>'View/veditarReserva.php',
+    'terminarReserva'=>'View/vpanelReservas.php'
+
 ];
 $controladores=[
     'inicio'=>'Controller/cinicio.php',
@@ -30,6 +32,7 @@ $controladores=[
     'modificarAdmin'=>'Controller/cmodificarAdmin.php',
     'panelReservas'=>'Controller/cpanelReservas.php',
     'borrarReserva'=>'Controller/cborrarReserva.php',
-    'editarReserva'=>'Controller/ceditarReserva.php'
+    'editarReserva'=>'Controller/ceditarReserva.php',
+    'terminarReserva'=>'Controller/cterminarReserva.php'
 ];
 ?>

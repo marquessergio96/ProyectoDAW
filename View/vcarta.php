@@ -39,7 +39,9 @@ width: 700px;height: auto;display: inline-flex;margin-bottom: 15px;">';
                     echo '</div>';
                     echo '<div style="margin-top: 10px; width: auto">';
                     echo '<h4>'.$producto['descripcion'].'</h4>';
-                    echo '</div>';
+            echo '<h4>'.$producto['precio'].'€</h4>';
+
+            echo '</div>';
                     echo '</div>';
             echo '</div>';
 
@@ -66,6 +68,8 @@ foreach ($arrayProductos2 as $producto){
     echo '</div>';
     echo '<div style="margin-top: 10px; width: auto">';
     echo '<h4>'.$producto['descripcion'].'</h4>';
+    echo '<h4>'.$producto['precio'].'€</h4>';
+
     echo '</div>';
     echo '</div>';
 
@@ -93,6 +97,8 @@ foreach ($arrayProductos3 as $producto){
     echo '</div>';
     echo '<div style="margin-top: 10px; width: auto">';
     echo '<h4>'.$producto['descripcion'].'</h4>';
+    echo '<h4>'.$producto['precio'].'€</h4>';
+
     echo '</div>';
     echo '</div>';
     echo '</div>';
