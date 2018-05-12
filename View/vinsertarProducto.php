@@ -12,6 +12,7 @@
                   style="margin-left: 25%;" enctype="multipart/form-data">
                 <!--                --><?php //echo "<span style='color:red;'>",$error,"</span>"; ?>
                 <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorCodDepartamento']."</span>";?>
+                <?php if (isset($mensajeError['errorNombre'])){echo '<span style="color:red">'.$mensajeError['errorNombre'].'</span>';} ?>
 
                 <div class="form-group input-group">
                     <span class="input-group-addon">
@@ -22,9 +23,9 @@
                     <input type="text" class="form-control" placeholder="Nombre producto" style="width: 200px;"
                            name="nombre" <?php if (isset($_POST['nombre'])) {
                         echo "value=" . $_POST['nombre'];
-                    } ?> ><?php if (isset($mensajeError['errorNombre'])){echo $mensajeError['errorNombre'];} ?>
+                    } ?> >
                 </div>
-                <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorDescripcion']."</span>";?>
+                <?php if (isset($mensajeError['errorDescripcion'])){echo '<span style="color:red">'.$mensajeError['errorDescripcion'];} ?>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-pencil"></span>
@@ -33,8 +34,10 @@
                     <input type="text" class="form-control" name="descripcion" style="width: 200px;"
                            placeholder="Descripción producto" <?php if (isset($_POST['descripcion'])) {
                         echo "value=" . $_POST['descripcion'];
-                    } ?> ><?php if (isset($mensajeError['errorDescripcion'])){echo $mensajeError['errorDescripcion'];} ?>
+                    } ?> >
                 </div>
+                <?php if (isset($mensajeError['errorPrecio'])){echo '<span style="color:red">'.$mensajeError['errorPrecio'].'</span>';} ?>
+
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-eur"></span>
@@ -44,6 +47,8 @@
                         echo "value=" . $_POST['precio'];
                     } ?> placeholder="Precio" style="width: 200px;">
                 </div>
+                <?php if (isset($mensajeError['errorTipo'])){echo '<span style="color:red">'.$mensajeError['errorTipo'].'</span>';} ?>
+
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-tag"></span>
@@ -55,20 +60,21 @@
                         <option value="Postre" <?php if(isset($_POST['tipo'])&& $_POST['tipo']=='Postre'){echo 'selected';}?>>Postre</option>
                     </select>
                 </div>
+                <?php echo '<span style="color:red">'.$mensajeError["errorSubida"].'</span>'; ?>
+
                 <div class="form-group input-group" style="width: 240px;">
                     <label class="input-group-btn">
                     <span class="btn btn-default" style="background-color:#eee;">
 
                         <span class="glyphicon glyphicon-camera" style="height:20px;"> Imagen</span>
                      <input type="file"  style="display: none; width: 150px;" name="imagen" id="imagen" onchange="cambiarTexto()" >
-                        <?php echo $mensajeError["errorSubida"]; ?>
 
                     </span>
 
                     </label>
-                    <input type="text" id="textoImagen"  name="textoImagen" <?php if (isset($_POST['textoImagen'])) {
+                    <input type="text" id="textoImagen"  readonly class="form-control" name="textoImagen" <?php if (isset($_POST['textoImagen'])) {
                         echo "value=" . $_POST['textoImagen'];
-                    } ?> class="form-control" readonly>
+                    } ?> >
                 </div>
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary" name="Añadir" value="Añadir">

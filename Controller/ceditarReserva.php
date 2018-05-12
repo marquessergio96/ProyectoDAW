@@ -17,7 +17,9 @@ $mensajeError = array(//Array para guardar los mensajes de errores.
 );
 if(isset($_POST['Editar'])){
     $mensajeError["errorNombre"] = comprobarTexto($_POST['nombre'], 100, 1, 1);
-//    $mensajeError["errorEmail"]=comprobarTexto($_POST['descripcion'],1000,1,1);
+    $mensajeError["errorFecha"]=validarFecha($_POST['fecha'],1);
+    $mensajeError["errorEmail"]=validarEmail($_POST['email'],100,3,1);
+    $mensajeError["errorPersonas"]=comprobarEntero($_POST['personas'],1);
 
     foreach ($mensajeError as $valor){//Bucle que recorre el array mensajeError, si hay algun mensaje la variable entradaOK cambia a false.
         if ($valor!=null){

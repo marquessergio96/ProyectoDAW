@@ -20,13 +20,13 @@ function comprobarTexto($cadena,$maxTamanio,$minTamanio,$obligatorio){
         $correcto.=" tiene que ser una cadena";
     }
     if (comprobarNoVacio((string)$cadena)==false){
-        $correcto.= " campo Vacio";
+        $correcto.= " Campo Vacio";
     }
     if (comprobarMaxTamanio((string)$cadena,$maxTamanio)==false){
-        $correcto .=" El tamaño maximo es ".$maxTamanio ;
+        $correcto .=" Tamaño maximo: ".$maxTamanio ;
     }
     if (comprobarMinTamanio((string)$cadena,$minTamanio)==false){
-        $correcto.=" El tamaño minimo es ".$minTamanio;
+        $correcto.=" Tamaño minimo: ".$minTamanio;
     }
     if (empty($cadena) && $obligatorio==0){
         $correcto=null;
@@ -122,10 +122,10 @@ function comprobarFloat($float,$obligatorio){
         $correcto="Error ";
     }
     if (!filter_var($float, FILTER_VALIDATE_FLOAT)){
-        $correcto.=" float no valido";
+        $correcto.=" numero no valido ";
     }
     if (!comprobarNoVacio($float)){
-        $correcto.= "campo vacio";
+        $correcto.= "campo vacio ";
     }
     if (empty($float) && $obligatorio==0){
         $correcto=null;
@@ -188,7 +188,7 @@ function validarURL ($url,$obligatorio){
 function validarFecha ($fecha,$obligatorio){
     $correcto = null;
     $fechaMinima="1900-01-01";
-    $fechaMaxima=date("Y-m-d");
+    $fechaMaxima=date("2018-8-8");
 
     if (validateDate($fecha) && comprobarNoVacio($fecha) && ($fecha>$fechaMinima) && ($fecha<$fechaMaxima)){
         $correcto = null;

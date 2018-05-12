@@ -20,9 +20,9 @@ require_once 'ReservaPDO.php';
          * @param $personas
          * @param $estado
          */
-        public function __construct($codReserva, $nombre, $email, $fecha, $hora, $personas, $estado)
+        public function __construct($codReserva,$nombre, $email, $fecha, $hora, $personas, $estado)
         {
-            $this->codReserva = $codReserva;
+            $this->codReserva=$codReserva;
             $this->nombre = $nombre;
             $this->email = $email;
             $this->fecha = $fecha;
@@ -30,6 +30,7 @@ require_once 'ReservaPDO.php';
             $this->personas = $personas;
             $this->estado = $estado;
         }
+
 
 
         public static function getReservas($estado){

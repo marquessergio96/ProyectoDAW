@@ -20,14 +20,25 @@ if (isset($_GET['pagina'])) {
 </head>
 <body>
 <?php require_once $vista; ?>
-<footer style="position: relative;
-    width: 100%;
-    height:70px;
-    background-color: white;
-    bottom: 0px;text-align: center">
-    <h3 >DERECHOS RESERVADOS MARQUÉS COMPANY S.L.</h3><a style="float:right"href="#"><span class="
-glyphicon glyphicon-arrow-up">ir arriba</span> </a>
-</footer>
+<div style="min-height: 50px;" id="footer-main">
+
+    <ul>
+        <li><a href=""><b>Sobre nosotros</b></a></li>
+        <li><a href=""><b>Contacta con nosotros</b></a></li>
+        <li><a href=""><b>Terminos y condiciones</b></a></li>
+        <li><a href=""><b>Blog</b></a></li>
+        <li><a href=""><b>Soporte</b></a></li>
+    </ul>
+
+    <div id="social-menu">
+        <ul>
+            <li><a href=""><img style="max-width:18px; margin-top: -7px;" src=""></a></li>
+            <li><a href=""><img style="max-width:18px; margin-top: -7px;" src=""></a></li>
+            <li><a href=""><img style="max-width:18px; margin-top: -7px;" src=""></a></li>
+        </ul>
+    </div>
+
+</div>
 </body>
 
 </html>

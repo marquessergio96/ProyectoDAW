@@ -11,8 +11,6 @@
             </div>
             <form action="<?PHP echo "index.php?pagina=editarProducto" . "&codProducto=$codProducto"; ?>" method="post" class="form-horizontal"
                   style="margin-left: 25%;" enctype="multipart/form-data">
-                <!--                --><?php //echo "<span style='color:red;'>",$error,"</span>"; ?>
-                <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorCodDepartamento']."</span>";?>
                 <div class="form-group input-group" >
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-camera"></span>
@@ -22,6 +20,8 @@
                     <img style="width:200px;height:200px;" src="<?php echo $producto->getImagen(); ?>">
 
                 </div>
+                <?php if (isset($mensajeError['errorNombre'])){echo '<span style="color:red">'.$mensajeError['errorNombre'].'</span>';} ?>
+
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-cutlery"></span>
@@ -30,7 +30,7 @@
                     <input type="text" class="form-control" placeholder="Nombre producto" style="width: 200px;"
                            name="nombre" value="<?php echo $producto->getNombre()?>"  >
                 </div>
-                <!--                --><?php //echo "<span style='color:red;'>".$mensajeError['errorDescripcion']."</span>";?>
+                <?php if (isset($mensajeError['errorDescripcion'])){echo '<span style="color:red">'.$mensajeError['errorDescripcion'].'</span>';} ?>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-pencil"></span>
@@ -39,6 +39,8 @@
                     <input type="text" class="form-control" name="descripcion" style="width: 200px;"
                            placeholder="Descripción producto" value="<?php echo $producto->getDescripcion(); ?>" >
                 </div>
+                <?php if (isset($mensajeError['errorPrecio'])){echo '<span style="color:red">'.$mensajeError['errorPrecio'].'</span>';} ?>
+
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-eur"></span>
@@ -46,6 +48,8 @@
                     <input type="number" class="form-control" min="0" max="500"
                            name="precio" placeholder="Precio" value="<?php echo $producto->getPrecio(); ?>" placeholder="Precio" step="0.1" style="width: 200px;">
                 </div>
+                <?php if (isset($mensajeError['errorTipo'])){echo '<span style="color:red">'.$mensajeError['errorTipo'].'</span>';} ?>
+
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-tag"></span>
@@ -57,13 +61,15 @@
                         <option value="Postre" <?php if($producto->getTipo()=='Postre'){echo 'selected';}?>>Postre</option>
                     </select>
                 </div>
+                <?php if (isset($mensajeError['errorSubida'])){echo '<span style="color:red">'.$mensajeError['errorSubida'].'</span>';} ?>
+
                 <div class="form-group input-group" style="width: 240px;">
                     <label class="input-group-btn">
                     <span class="btn btn-default" style="background-color:#eee;">
 
                         <span class="glyphicon glyphicon-camera" style="height:20px;"> Imagen</span>
                      <input type="file" value="<?php echo $producto->getImagen(); ?>" style="display: none; width: 150px;" name="imagen" id="imagen" onchange="cambiarTexto()">
-                        <?php echo $mensajeError["errorSubida"]; ?>
+                        <?php echo '<span style="color:red">'.$mensajeError["errorSubida"].'</span>'; ?>
 
                     </span>
 
