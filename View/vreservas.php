@@ -19,7 +19,6 @@
     </div>
 </nav>
 <?php echo '<h1 style="text-align: center;color:darkred;margin:0;margin-top: 80px;">'.$mensaje.'</h1>'; ?>
-
 <h1 id="Titulo" style=" width: 300px;margin: auto;margin-top: 100px; height: auto;">Reservas</h1>
 <form action="index.php?pagina=reservas" method="post" class="form-horizontal">
 <div class="container" style="background-color: white;width:700px;height: auto;border-radius:5px;border: 10px solid black;">

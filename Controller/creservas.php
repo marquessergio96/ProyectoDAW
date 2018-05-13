@@ -13,7 +13,9 @@ if(isset($_POST['Reservar'])){
     $mensajeError["errorFecha"]=validarFecha($_POST['fecha'],1);
     $mensajeError["errorEmail"]=validarEmail($_POST['email'],100,3,1);
     $mensajeError["errorPersonas"]=comprobarEntero($_POST['personas'],1);
-
+    if(Reserva::getPersonasHora($_POST['fecha'],$_POST['hora'])+$_POST['personas']>30){
+        $mensajeError["errorPersonas"]='Lo sentimos, no hay capacidad suficiente';
+    }
 
 
     foreach ($mensajeError as $valor){//Bucle que recorre el array mensajeError, si hay algun mensaje la variable entradaOK cambia a false.

@@ -2,12 +2,33 @@
 require_once 'ReservaPDO.php';
 
     Class Reserva{
+        /**
+         * @var
+         */
         private $codReserva;
+        /**
+         * @var
+         */
         private $nombre;
+        /**
+         * @var
+         */
         private $email;
+        /**
+         * @var
+         */
         private $fecha;
+        /**
+         * @var
+         */
         private $hora;
+        /**
+         * @var
+         */
         private $personas;
+        /**
+         * @var
+         */
         private $estado;
 
         /**
@@ -32,12 +53,28 @@ require_once 'ReservaPDO.php';
         }
 
 
-
+        /**
+         * Funcion para recuperar un array con las reservas de la bd.
+         *
+         * @param $estado
+         * @return array
+         */
         public static function getReservas($estado){
             return ReservaPDO::getReservas($estado);
         }
 
-        public static function registrarReserva($nombre, $email, $fecha, $hora, $personas,$estado){
+        /**
+         * Funcion para insertar una reserva en la bd
+         *
+         * @param $nombre
+         * @param $email
+         * @param $fecha
+         * @param $hora
+         * @param $personas
+         * @param $estado
+         * @return null|Reserva
+         */
+        public static function registrarReserva($nombre, $email, $fecha, $hora, $personas, $estado){
             $reserva=null;
             if (ReservaPDO::registrarReserva($nombre, $email, $fecha, $hora, $personas,$estado)){
                 $reserva=new Reserva($nombre, $email, $fecha, $hora, $personas,$estado);
@@ -45,6 +82,12 @@ require_once 'ReservaPDO.php';
             return $reserva;
         }
 
+        /**
+         * Funcion utilizada para recuperar los datos de una reserva de la bd.
+         *
+         * @param $codReserva
+         * @return null|Reserva
+         */
         public static function obtenerReserva($codReserva){
             $reserva=null;
             $arrayReserva=ReservaPDO::obtenerReserva($codReserva);
@@ -54,7 +97,17 @@ require_once 'ReservaPDO.php';
             return $reserva;
         }
 
-        public function editarReserva($nombre,$email, $fecha,$hora,$personas)
+        /**
+         * Funcion utlizada para editar una reserva.
+         *
+         * @param $nombre
+         * @param $email
+         * @param $fecha
+         * @param $hora
+         * @param $personas
+         * @return bool
+         */
+        public function editarReserva($nombre, $email, $fecha, $hora, $personas)
         {
             $codReserva = $this->getCodReserva();
             if(ReservaPDO::editarReserva($codReserva,$nombre,$email, $fecha,$hora,$personas)){
@@ -68,13 +121,27 @@ require_once 'ReservaPDO.php';
             return false;
         }
 
+        /**
+         * @param $fecha
+         * @param $hora
+         * @return mixed
+         */
+        public static function getPersonasHora($fecha, $hora){
+            return ReservaPDO::getPersonasHora($fecha,$hora);
+        }
 
 
+        /**
+         * @return bool
+         */
         public function anularReserva(){
             $codReserva=$this->getCodReserva();
             return ReservaPDO::anularReserva($codReserva);
         }
 
+        /**
+         * @return bool
+         */
         public function terminarReserva(){
             $codReserva=$this->getCodReserva();
             return ReservaPDO::terminarReserva($codReserva);

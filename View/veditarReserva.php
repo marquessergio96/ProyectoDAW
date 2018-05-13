@@ -35,21 +35,28 @@
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                     </span>
-                    <input type="text" name="fecha" class="form-control"
+                    <input type="date" name="fecha" class="form-control"
                            value="<?php echo $reserva->getFecha(); ?>"  style="width: 200px;">
                 </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-hourglass"></span>
                     </span>
-                    <input type="text" class="form-control" name="hora" style="width: 200px;" value="<?php echo $reserva->getHora(); ?>" >
-                </div>
+                    <select class="form-control" name="hora" style="width: 200px;">
+                        <option value="13:00" <?php if($reserva->getHora()=='13:00:00'){echo 'selected';}?>>13:00</option>
+                        <option value="14:00" <?php if($reserva->getHora()=='14:00:00'){echo 'selected';}?>>14:00</option>
+                        <option value="15:00" <?php if($reserva->getHora()=='15:00::00'){echo 'selected';}?>>15:00</option>
+                        <option value="16:00" <?php if($reserva->getHora()=='16:00:00'){echo 'selected';}?>>16:00</option>
+                        <option value="17:00" <?php if($reserva->getHora()=='17:00:00'){echo 'selected';}?>>17:00</option>
+
+
+                    </select>                </div>
 
                 <div class="form-group input-group">
                     <span class="input-group-addon">
                         <span class="glyphicon glyphicon-user"></span>
                     </span>
-                    <input type="text" class="form-control" name="personas" style="width: 200px;" value="<?php echo $reserva->getPersonas(); ?>" >
+                    <input type="number" class="form-control" name="personas" style="width: 200px;" value="<?php echo $reserva->getPersonas(); ?>" >
                 </div>
 
                 <div class="form-group">
